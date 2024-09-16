@@ -1,24 +1,38 @@
-## steps to run
-### prequisites
-1) git clone this repository
+# Multi-Robot Waiting System
 
-### steps
-1) copy the package folder to your catkin_ws/src folder
-2) rename the package folder to "waiter_robots"
-3) cd to scripts/node.py and run
-```
-chmod +x node.py
-```
-this makes the file executable <br />
-4) in catkin_ws run
-``` 
+This project implements a Markov Decision Process (MDP) based solution for a simulated system of waiter robots. It uses ROS (Robot Operating System) to simulate the behavior of multiple robots waiting on tables in a restaurant.
+
+## Features
+- Simulates multiple waiter robots using MDP.
+- ROS-based simulation environment.
+- Includes configuration for map, RViz, and Stage simulator.
+
+## Prerequisites
+- ROS (Melodic/Noetic)
+- Python 3.x
+
+## Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/aditya-kamatt/MultiRobotWaitingSystem.git
+2. Copy the package folder to your catkin_ws/src directory.
+3. Rename the folder to waiter_robots.
+
+## Build the workspace:
+```bash
 catkin_make
 ```
-5) to run the code now run in seperate terminals
-```
+Run the following commands in separate terminals:
+```bash
 roscore
-rosrun stage_ros stageros "path to map world file"
-rosrun map_server map_server "path to map yaml file"
+rosrun stage_ros stageros <path to map world file>
+rosrun map_server map_server <path to map yaml file>
 rosrun rviz rviz
 rosrun waiter_robots node.py
+```
+
+## Running the Simulation
+Make the `node.py` script executable:
+```bash
+chmod +x scripts/node.py
 ```
